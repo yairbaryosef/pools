@@ -1,0 +1,26 @@
+:root { color-scheme: light; font: 16px/1.5 system-ui, sans-serif; color: #18212b; background: #f6f8fb; }
+body { margin: 0; }
+.site-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem max(1rem, calc((100% - 62rem) / 2)); background: #172a46; color: #fff; }
+.brand, .site-header a { color: #fff; font-weight: 700; text-decoration: none; }
+main { max-width: 62rem; margin: 0 auto; padding: 2rem 1rem 5rem; }
+.card { background: #fff; border: 1px solid #d8e0eb; border-radius: .5rem; padding: 1.25rem; margin: 1rem 0; box-shadow: 0 1px 2px #0000000d; }
+.narrow { max-width: 30rem; margin-inline: auto; }
+label { display: block; font-weight: 600; margin-top: .8rem; }
+input, textarea, button { font: inherit; }
+input, textarea { display: block; box-sizing: border-box; width: 100%; max-width: 40rem; padding: .6rem; border: 1px solid #718096; border-radius: .25rem; margin-top: .25rem; }
+button { border: 0; border-radius: .25rem; background: #1d5fbf; color: #fff; padding: .6rem .9rem; cursor: pointer; margin: .75rem .5rem .25rem 0; }
+button.secondary { background: #53657d; } button.danger { background: #a52c35; }
+button:disabled { opacity: .55; cursor: wait; }
+:focus-visible { outline: 3px solid #f5b700; outline-offset: 2px; }
+.error { color: #9c1c28; background: #fff0f1; border-left: 4px solid #b4232d; padding: .7rem; }
+.success { color: #12633c; background: #eaf8f0; padding: .7rem; }
+.muted { color: #53657d; } .row { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem; }
+.option { display: flex; gap: .5rem; align-items: center; font-weight: 400; }
+.option input { width: auto; margin: 0; }
+.status { position: fixed; bottom: 0; left: 0; right: 0; padding: .5rem 1rem; background: #172a46; color: #fff; text-align: center; }
+table { border-collapse: collapse; width: 100%; } th, td { text-align: left; padding: .5rem; border-bottom: 1px solid #d8e0eb; }
+[role="listbox"] { max-width: 40rem; border: 1px solid #718096; border-radius: .25rem; background: #fff; margin-top: .25rem; overflow: hidden; }
+[role="option"] { padding: .55rem .6rem; cursor: pointer; }
+[role="option"][aria-selected="true"], [role="option"]:hover { background: #e8f0fc; }
+.username-filter { max-width: 40rem; }

@@ -1,0 +1,7 @@
+{
+  "name": "atlas-pools-server",
+  "private": true,
+  "scripts": {
+    "dev": "python scripts/dev.py"
+  }
+}
