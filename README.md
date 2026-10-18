@@ -93,6 +93,15 @@ database.
 From the repository root, with Python 3.12+ and project dependencies installed:
 
 ```powershell
+# Create and activate a virtual environment (PowerShell)
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
+# Install the package and development tools
+python -m pip install --upgrade pip
+python -m pip install -e ".[dev]"
+
+# Start the local server
 npm run dev
 ```
 
@@ -100,6 +109,22 @@ This runs `scripts/dev.py`, which selects a supported interpreter, checks port
 8000, sets local SQLite configuration, and supervises Uvicorn on
 `http://127.0.0.1:8000`. Do not paste credentials into the repository or use
 production data for local tests.
+
+Useful local endpoints:
+
+- `http://127.0.0.1:8000/healthz` — liveness check
+- `http://127.0.0.1:8000/readyz` — SQLite readiness check
+- `http://127.0.0.1:8000/docs` — FastAPI API documentation
+
+To select a disposable database explicitly, set the variable before starting:
+
+```powershell
+$env:ATLAS_DATABASE_URL = "sqlite:///./database/atlas-dev.sqlite3"
+npm run dev
+```
+
+Use a unique temporary SQLite file for tests. Do not commit database files,
+OAuth credentials, session secrets, service-account JSON, or browser cookies.
 
 ## Agent structure and ownership
 
@@ -244,3 +269,5 @@ opencode --agent atlas-orchestrator
 Give it a bounded slice and request no deployment. Read
 `docs/ORCHESTRATION.md` before delegating work; it defines ordering, ownership
 boundaries, and handoff requirements.
+
+yair
